@@ -91,7 +91,7 @@ export default function Footer() {
                     >
                         Email
                     </motion.p>
-                    <p className="text-gray-300">ananyag0206@gmail.com</p>
+                    <p className="text-gray-300">{import.meta.env.VITE_CONTACT_EMAIL}</p>
 
                     <motion.p
                         whileHover={{ x: 5, color: "#c084fc" }}

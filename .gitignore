@@ -26,3 +26,6 @@ dist-ssr
 public/image.png
 public/image.jpeg
 public/CV_PORT.pdf
+public/port.jpeg
+
+.env

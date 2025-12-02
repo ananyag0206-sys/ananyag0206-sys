@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+const email = import.meta.env.VITE_CONTACT_EMAIL;
+const phone = import.meta.env.VITE_CONTACT_PHONE;
 // TEXT SPLIT ANIMATION
 const splitText = (text) =>
     text.split("").map((char, i) => (
@@ -170,8 +172,8 @@ export default function Contact() {
                 {/* RIGHT — CONNECT BOXES */}
                 <motion.div className="space-y-6">
                     {[
-                        { icon: "📩", label: "Email", value: "ananyag@gmail.com", color: "purple" },
-                        { icon: "📞", label: "Phone", value: "+91 xxxxxxxxx", color: "blue" },
+                        { icon: "📩", label: "Email", value: email, color: "purple" },
+                        { icon: "📞", label: "Phone", value: phone, color: "blue" },
                         { icon: "📍", label: "Location", value: "Gwalior, India", color: "pink" },
                     ].map((item, idx) => (
                         <motion.div

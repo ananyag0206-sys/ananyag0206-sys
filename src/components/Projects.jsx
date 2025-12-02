@@ -6,6 +6,21 @@ export default function Projects() {
     const projects = [
         {
             id: 1,
+            title: "Personal Portfolio Website",
+            desc:
+                "A modern, fully responsive portfolio built with React.js and Framer Motion, featuring smooth animations, reusable components, a dynamic projects section, and an optimized UI/UX design.",
+            img: "/port.jpeg",
+            tags: [
+                "React.js",
+                "Framer Motion",
+                "Tailwind CSS",
+                "Responsive Design",
+                "Vite",
+                "JavaScript",
+            ],
+        },
+        {
+            id: 2,
             title: "Universal Multi-Database Client (DEX Project)",
             desc:
                 "Designed a multi-database client with real-time interaction, query execution, visual insights and a developer-first workflow.",
@@ -128,7 +143,7 @@ export default function Projects() {
                     textShadow: "0 0 35px rgba(139,92,246,0.35)",
                 }}
             >
-                {["F","e","a","t","u","r","e","d"," ","P","r","o","j","e","c","t","s"].map((char, i) => (
+                {["F", "e", "a", "t", "u", "r", "e", "d", " ", "P", "r", "o", "j", "e", "c", "t", "s"].map((char, i) => (
                     <motion.span
                         key={i}
                         variants={letter}
@@ -323,7 +338,13 @@ function Card({ project, index, variants, parallax, clamp }) {
 
                     {/* ⭐ BUTTON */}
                     <motion.a
-                        href="#"
+                        href={
+                            project.id === 1
+                                ? import.meta.env.VITE_PORTFOLIO_GITHUB_LINK
+                                : project.id === 2
+                                    ? import.meta.env.VITE_DEX_GITHUB_LINK
+                                    : undefined // Fallback if project.id is neither 1 nor 2
+                        }
                         whileHover={{
                             scale: 1.08,
                             x: 4,
