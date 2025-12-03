@@ -7,7 +7,7 @@ export default function About() {
         visible: {
             opacity: 1,
             x: 0,
-            transition: { duration: 0.7, ease: "easeOut", delay: 0.7},
+            transition: { duration: 0.7, ease: "easeOut", delay: 0.7 },
         },
     };
 
@@ -133,7 +133,7 @@ export default function About() {
             transition: {
                 duration: 0.5,
                 ease: "easeOut",
-                when: "beforeChildren",
+
                 staggerChildren: 0.04,
             },
         },
@@ -192,7 +192,7 @@ export default function About() {
                     ref={leftRef}
                     initial={leftInitial}
                     whileInView={leftAnimate}
-                    viewport={{ once: true }}
+                 
                     className="relative flex items-center justify-center"
                 >
                     <motion.div
@@ -329,7 +329,7 @@ export default function About() {
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true }}
+                    //  
                     variants={parent}
                     className="space-y-6"
                 >
@@ -337,19 +337,23 @@ export default function About() {
                         variants={aboutTitle}
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: true }}
-                        className="text-4xl md:text-5xl font-bold text-purple-400 flex  gap-1"
+                        //  
+                        className="text-4xl md:text-5xl font-bold flex gap-1 mb-4"
                         style={{
-                            textShadow:
-                                "0 8px 30px rgba(255,255,255,0.06), 0 2px 8px rgba(139,92,246,0.06)",
+                            textShadow: "0 0 35px rgba(139,92,246,0.35)",
                         }}
                     >
                         {["A", "b", "o", "u", "t", " ", "M", "e"].map((char, i) => (
-                            <motion.span key={i} variants={letter}>
+                            <motion.span
+                                key={i}
+                                variants={letter}
+                                className={"text-purple-400"}
+                            >
                                 {char}
                             </motion.span>
                         ))}
                     </motion.h2>
+
 
                     <motion.p
                         variants={unified}

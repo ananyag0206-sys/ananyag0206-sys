@@ -137,7 +137,7 @@ export default function Projects() {
                 variants={titleVariants}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true }}
+                 
                 className="text-center text-5xl md:text-6xl font-extrabold flex justify-center gap-1 mb-6"
                 style={{
                     textShadow: "0 0 35px rgba(139,92,246,0.35)",
@@ -158,7 +158,7 @@ export default function Projects() {
             <motion.p
                 initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                 
                 transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
                 className="text-gray-300 text-center max-w-2xl mx-auto text-lg leading-relaxed"
             >

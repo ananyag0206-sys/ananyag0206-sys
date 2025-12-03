@@ -78,7 +78,6 @@ export default function Contact() {
                 initial="hidden"
                 whileInView="visible"
                 variants={staggerParent}
-                viewport={{ once: true }}
                 className="text-5xl md:text-6xl font-extrabold text-center mb-4"
                 style={{
                     textShadow:
@@ -94,7 +93,7 @@ export default function Contact() {
                 whileInView="visible"
                 className="text-gray-300 text-center max-w-2xl mx-auto"
             >
-                Whether it's a project, collaboration, or a simple hello —  
+                Whether it's a project, collaboration, or a simple hello —
                 I'm always open to connecting and creating something amazing.
             </motion.p>
 

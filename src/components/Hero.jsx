@@ -27,6 +27,7 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1 }}
+                    viewport={{ once: false }}
                     className="text-left md:text-center block text-4xl md:text-6xl text-white/90 mb-1"
                 >
                     Hi, I'm
@@ -37,6 +38,7 @@ export default function Hero() {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1, delay: 0.3 }}
+                    viewport={{ once: false }}
                     className="block text-10xl md:text-[5.5rem] font-extrabold tracking-tight 
                     text-transparent bg-clip-text bg-gradient-to-r from-white to-primary"
                 >
@@ -48,6 +50,7 @@ export default function Hero() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1.2, delay: 0.6 }}
+                    viewport={{ once: false }}
                     className="text-5xl md:text-[4rem] font-extrabold tracking-tight text-primary typing-effect mx-auto w-fit inline-block whitespace-nowrap"
                 >
                     Full Stack Developer
@@ -59,6 +62,7 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 25 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 1 }}
+                    viewport={{ once: false }}
                     className="mt-6 text-gray-300 max-w-2xl mx-auto text-lg md:text-xl"
                 >
                     Full Stack Developer crafting modern, responsive web apps with clean UI and
@@ -70,11 +74,13 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 1.2 }}
+
                     className="mt-10 flex flex-col sm:flex-row items-center gap-4 justify-center"
                 >
                     <motion.a
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
+                        viewport={{ once: false }}
                         href="#contact"
                         className="
     relative px-8 py-3 rounded-xl font-semibold text-white
@@ -106,6 +112,7 @@ export default function Hero() {
                     <motion.a
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
+                        viewport={{ once: false }}
                         href="/CV_PORT.pdf"
                         download
                         className="px-6 py-3 rounded-full bg-black/50 border border-white/10 
@@ -117,6 +124,7 @@ export default function Hero() {
                     <motion.a
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
+                        viewport={{ once: false }}
                         href="#projects"
                         className="px-6 py-3 rounded-full border border-white/10 
                         hover:border-white/60 text-white font-medium transition"

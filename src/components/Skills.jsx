@@ -72,7 +72,6 @@ const letter = {
     variants={titleVariants}
     initial="hidden"
     whileInView="visible"
-    viewport={{ once: true }}
 >
     {["M","y"," ","S","k","i","l","l","s"].map((char, i) => (
         <motion.span
@@ -91,7 +90,7 @@ const letter = {
                 variants={container}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true }}
+                 
             >
                 {skills.map((skill, index) => (
                     <motion.div
