@@ -1,44 +1,62 @@
 "use client";
 import React, { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import CardFlip from "./CardFlip";
+// import GlassCard from "./GlassCard.jsx";
+// import CardFlip from "./CardFlip";
+import UniverseCard from "./UniverseCard";
 
 // import MouseDotsBG from "./MouseDotsBG";
 
 export default function Projects() {
     const projects = [
-        {
-            id: 1,
-            title: "Personal Portfolio Website",
-            desc:
-                "A modern, fully responsive portfolio built with React.js and Framer Motion, featuring smooth animations, reusable components, a dynamic projects section, and an optimized UI/UX design.",
-            img: "/port.jpeg",
-            tags: [
-                "React.js",
-                "Framer Motion",
-                "Tailwind CSS",
-                "Responsive Design",
-                "Vite",
-                "JavaScript",
-            ],
-        },
-        {
-            id: 2,
-            title: "Universal Multi-Database Client (DEX Project)",
-            desc:
-                "Designed a multi-database client with real-time interaction, query execution, visual insights and a developer-first workflow.",
-            img: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb",
-            tags: [
-                "React.js",
-                "Node.js",
-                "PostgreSQL",
-                "MongoDB",
-                "MySQL",
-                "REST API",
-                "Cloud",
-            ],
-        },
-    ];
+        // {
+        //     id: 1,
+        //     title: "Personal Portfolio Website",
+        //     desc:
+        //         "A modern, fully responsive portfolio built with React.js and Framer Motion, featuring smooth animations, reusable components, a dynamic projects section, and an optimized UI/UX design.",
+        //     img: "/port.jpeg",
+        //     tags: [
+        //         "React.js",
+        //         "Framer Motion",
+        //         "Tailwind CSS",
+        //         "Responsive Design",
+        //         "Vite",
+        //         "JavaScript",
+        //     ],
+        // },
+        // {
+        //     id: 2,
+        //     title: "Universal Multi-Database Client (DEX Project)",
+        //     desc:
+        //         "Designed a multi-database client with real-time interaction, query execution, visual insights and a developer-first workflow.",
+        //     img: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb",
+        //     tags: [
+        //         "React.js",
+        //         "Node.js",
+        //         "PostgreSQL",
+        //         "MongoDB",
+        //         "MySQL",
+        //         "REST API",
+        //         "Cloud",
+        //     ],
+        // },
+   
+    {
+    id: 1,
+    title: "Portfolio Website",
+    img: "/port.jpeg",
+    // subtitle: "A modern, fully responsive portfolio built with React.js and Framer Motion",
+    desc:
+        "A modern, fully responsive portfolio built with React.js and Framer Motion, featuring smooth animations, reusable components, a dynamic projects section, and an optimized UI/UX design.",
+},
+{    id: 2,
+    title: "Multi-Database Client",
+    img: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb",
+    desc:
+        "Designed a multi-database client with real-time interaction, query execution, visual insights and a developer-first workflow.",
+    // subtitle: "Designed a multi-database client with real-time interaction, query execution, visual insights and a developer-first workflow.",
+}
+];
 
     /* ---------------- Heading Animations ---------------- */
     const titleVariants = {
@@ -181,18 +199,47 @@ export default function Projects() {
     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto mt-14"
 >
     {projects.map((p) => (
-        <CardFlip
+//         <CardFlip
+//     key={p.id}
+//     title={p.title}
+//     description={p.desc}
+//     img={p.img}
+//     features={p.tags}
+//     github={
+//         p.id === 1
+//             ? import.meta.env.VITE_PORTFOLIO_GITHUB_LINK
+//             : import.meta.env.VITE_DEX_GITHUB_LINK
+//     }
+// />
+
+//  <GlassCard
+//     key={p.id}
+//     title={p.title}
+//     description={p.desc}
+//     img={p.img}
+//     features={p.tags}
+//     github={
+//         p.id === 1
+//             ? import.meta.env.VITE_PORTFOLIO_GITHUB_LINK
+//             : import.meta.env.VITE_DEX_GITHUB_LINK
+//     }
+// /> 
+
+<UniverseCard
     key={p.id}
     title={p.title}
-    description={p.desc}
+    subtitle={p.subtitle}
+    desc={p.desc}
     img={p.img}
-    features={p.tags}
-    github={
+    action="View Project"
+    link={
         p.id === 1
             ? import.meta.env.VITE_PORTFOLIO_GITHUB_LINK
             : import.meta.env.VITE_DEX_GITHUB_LINK
     }
 />
+
+
     ))}
 </motion.div>
 
