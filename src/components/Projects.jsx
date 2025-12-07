@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 // import GlassCard from "./GlassCard.jsx";
 // import CardFlip from "./CardFlip";
 import UniverseCard from "./UniverseCard";
+// import Background from "./Background.jsx";
 
 // import MouseDotsBG from "./MouseDotsBG";
 
@@ -65,6 +66,19 @@ export default function Projects() {
             transition: { staggerChildren: 0.06 },
         },
     };
+const subtitle = "Hand-picked modern full-stack projects focused on animations, performance and clean UI.";
+
+const letterVariants = {
+  hidden: { opacity: 0, y: 15 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.04,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
 
     const letter = {
         hidden: { opacity: 0, y: 18, filter: "blur(4px)" },
@@ -138,6 +152,7 @@ export default function Projects() {
                     }}
                 />
             ))}
+            {/* <Background /> */}
 
             {/* ⭐ Aurora Background */}
             <motion.div
@@ -178,16 +193,20 @@ export default function Projects() {
             </motion.h2>
 
             {/* ⭐ Subtext */}
-            <motion.p
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                 
-                transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-                className="text-gray-300 text-center max-w-2xl mx-auto text-lg leading-relaxed"
-            >
-                Hand-picked modern full-stack projects focused on animations,
-                performance and clean UI.
-            </motion.p>
+              <motion.p
+      initial="hidden"
+      whileInView="visible"
+    //   viewport={{ once: false }}
+      transition={{ staggerChildren: 0.015 }}
+      className="text-gray-300 text-center max-w-3xl mx-auto text-lg leading-relaxed flex flex-wrap justify-center"
+    >
+      {subtitle.split("").map((char, i) => (
+        <motion.span key={i} variants={letterVariants}>
+          {char === " " ? "\u00A0" : char}
+        </motion.span>
+      ))}
+    </motion.p>
+
 
             {/* ⭐ Cards Grid */}
             <motion.div
@@ -196,52 +215,74 @@ export default function Projects() {
     initial="hidden"
     whileInView="visible"
     viewport={{ once: false, amount: 0.15 }}
+    transition={{
+        staggerChildren: 0.18,        // ⭐ Delay between each card
+        delayChildren: 0.2,
+    }}
     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto mt-14"
 >
     {projects.map((p) => (
-//         <CardFlip
-//     key={p.id}
-//     title={p.title}
-//     description={p.desc}
-//     img={p.img}
-//     features={p.tags}
-//     github={
-//         p.id === 1
-//             ? import.meta.env.VITE_PORTFOLIO_GITHUB_LINK
-//             : import.meta.env.VITE_DEX_GITHUB_LINK
-//     }
-// />
 
-//  <GlassCard
-//     key={p.id}
-//     title={p.title}
-//     description={p.desc}
-//     img={p.img}
-//     features={p.tags}
-//     github={
-//         p.id === 1
-//             ? import.meta.env.VITE_PORTFOLIO_GITHUB_LINK
-//             : import.meta.env.VITE_DEX_GITHUB_LINK
-//     }
-// /> 
+        <motion.div
+            key={p.id}
+            variants={{
+                hidden: { opacity: 0, scale: 0.85, y: 30 },
+                visible: {
+                    opacity: 1,
+                    scale: 1,
+                    y: 0,
+                    transition: {
+                        duration: 0.8,
+                        ease: [0.22, 1, 0.36, 1],
+                    },
+                },
+            }}
+        >
+            {/* 
+                <CardFlip
+                    key={p.id}
+                    title={p.title}
+                    description={p.desc}
+                    img={p.img}
+                    features={p.tags}
+                    github={
+                        p.id === 1
+                            ? import.meta.env.VITE_PORTFOLIO_GITHUB_LINK
+                            : import.meta.env.VITE_DEX_GITHUB_LINK
+                    }
+                />
 
-<UniverseCard
-    key={p.id}
-    title={p.title}
-    subtitle={p.subtitle}
-    desc={p.desc}
-    img={p.img}
-    action="View Project"
-    link={
-        p.id === 1
-            ? import.meta.env.VITE_PORTFOLIO_GITHUB_LINK
-            : import.meta.env.VITE_DEX_GITHUB_LINK
-    }
-/>
+                <GlassCard
+                    key={p.id}
+                    title={p.title}
+                    description={p.desc}
+                    img={p.img}
+                    features={p.tags}
+                    github={
+                        p.id === 1
+                            ? import.meta.env.VITE_PORTFOLIO_GITHUB_LINK
+                            : import.meta.env.VITE_DEX_GITHUB_LINK
+                    }
+                />  
+            */}
 
+            <UniverseCard
+                title={p.title}
+                subtitle={p.subtitle}
+                desc={p.desc}
+                img={p.img}
+                action="View Project"
+                link={
+                    p.id === 1
+                        ? import.meta.env.VITE_PORTFOLIO_GITHUB_LINK
+                        : import.meta.env.VITE_DEX_GITHUB_LINK
+                }
+            />
+        </motion.div>
 
     ))}
 </motion.div>
+
 
         </section>
     );

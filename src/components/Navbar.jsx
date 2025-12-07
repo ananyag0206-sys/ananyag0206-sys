@@ -48,7 +48,7 @@ export default function Navbar() {
                     transition={{ type: "spring", stiffness: 260, damping: 18 }}
                     className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 relative z-10 cursor-pointer"
                 >
-                    Portfolio
+                   Ananya's Portfolio
                 </motion.div>
 
                 {/* Links */}
