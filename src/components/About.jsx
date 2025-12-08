@@ -219,7 +219,7 @@ export default function About() {
                         />
 
                         {/* === RING #2 – HOLOGRAPHIC SHIMMER RING === */}
-                        <motion.div
+                        {/* <motion.div
                             className="absolute inset-6 rounded-full"
                             animate={{ rotate: -360 }}
                             transition={{ duration: 38, repeat: Infinity, ease: "linear" }}
@@ -230,7 +230,7 @@ export default function About() {
                                 filter: "blur(0.3px)",
                                 opacity: 0.85,
                             }}
-                        />
+                        /> */}
 
                         {/* === RING #3 – INNER SOFT HALO === */}
                         <motion.div

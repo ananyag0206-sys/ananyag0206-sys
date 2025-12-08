@@ -155,7 +155,7 @@ export default function Hero() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             viewport={{ once: false }}
-            href="#contact"
+            href="#projects"
             className="
               relative px-8 py-3 rounded-xl font-semibold text-white
               bg-gradient-to-br from-purple-600/80 to-fuchsia-500/80
@@ -165,7 +165,7 @@ export default function Hero() {
               overflow-hidden
             "
           >
-            <span className="relative z-10">Hire Me</span>
+            <span className="relative z-10">View My Work</span>
 
             <motion.div
               className="absolute inset-0 z-0"
@@ -194,7 +194,7 @@ export default function Hero() {
             Download CV
           </motion.a>
 
-          <motion.a
+          {/* <motion.a
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             viewport={{ once: false }}
@@ -203,7 +203,7 @@ export default function Hero() {
                        hover:border-white/60 text-white font-medium transition"
           >
             View My Work →
-          </motion.a>
+          </motion.a> */}
         </motion.div>
       </div>
     </main>
