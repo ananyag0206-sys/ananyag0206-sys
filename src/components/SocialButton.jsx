@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Twitter, Mail, Linkedin, Link } from "lucide-react";
+import { X, Mail, Link, User } from "lucide-react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/button";
@@ -13,8 +13,8 @@ export default function SocialButton({ className, ...props }) {
     // ⭐ USING LINKS FROM .env FILE ⭐
     const socialLinks = [
         { 
-            icon: Twitter,
-            label: "Twitter",
+            icon: X,
+            label: "X",
             url: import.meta.env.VITE_TWITTER_URL
         },
         { 
@@ -28,7 +28,7 @@ export default function SocialButton({ className, ...props }) {
             url: import.meta.env.VITE_LINKEDIN_URL
         },
         { 
-            icon: Link,
+            icon: User,
             label: "Portfolio",
             url: import.meta.env.VITE_PORTFOLIO_URL
         },
