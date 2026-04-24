@@ -23,8 +23,8 @@ export default function SocialButton({ className, ...props }) {
             url: import.meta.env.VITE_GMAIL_URL
         },
         { 
-            icon: Linkedin,
-            label: "LinkedIn",
+            icon: Link,
+            label: "Link",
             url: import.meta.env.VITE_LINKEDIN_URL
         },
         { 
