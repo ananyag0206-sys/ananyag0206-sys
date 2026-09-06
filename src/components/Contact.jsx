@@ -1,8 +1,9 @@
-import React from "react";
 import { motion } from "framer-motion";
 
-const email = import.meta.env.VITE_CONTACT_EMAIL;
-const phone = import.meta.env.VITE_CONTACT_PHONE;
+const email = "ananya.s.prof@gmail.com";
+const phone = "7649094732";
+const location = "Delhi, India";
+
 // TEXT SPLIT ANIMATION
 const splitText = (text) =>
     text.split("").map((char, i) => (
@@ -12,7 +13,7 @@ const splitText = (text) =>
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{
                 duration: 0.5,
-                delay: i * 0.05,
+                // delay: i * 0.05,
                 ease: "easeOut",
             }}
         >
@@ -25,7 +26,7 @@ const staggerParent = {
     visible: {
         transition: {
             staggerChildren: 0.12,
-            delayChildren: 0.3,
+            // delayChildren: 0.3,
         },
     },
 };
@@ -59,7 +60,7 @@ export default function Contact() {
                     transition={{
                         duration: 5 + Math.random() * 6,
                         repeat: Infinity,
-                        delay: Math.random() * 4,
+                        // delay: Math.random() * 4,
                     }}
                     className="absolute rounded-full bg-purple-500"
                     style={{
@@ -173,7 +174,7 @@ export default function Contact() {
                     {[
                         { icon: "📩", label: "Email", value: email, color: "purple" },
                         { icon: "📞", label: "Phone", value: phone, color: "blue" },
-                        { icon: "📍", label: "Location", value: "Gwalior, India", color: "pink" },
+                        { icon: "📍", label: "Location", value: location, color: "pink" },
                     ].map((item, idx) => (
                         <motion.div
                             key={idx}

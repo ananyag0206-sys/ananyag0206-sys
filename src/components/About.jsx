@@ -58,7 +58,7 @@ export default function About() {
         return Array.from({ length: 18 }).map(() => ({
             left: Math.random() * 100,
             top: Math.random() * 100,
-            delay: Math.random() * 3,
+            // delay: Math.random() * 3,
             duration: 5 + Math.random() * 6,
             size: 1 + Math.random() * 3,
             dir: Math.random() > 0.5 ? 1 : -1,
@@ -152,7 +152,7 @@ export default function About() {
                         duration: p.duration,
                         ease: "easeInOut",
                         repeat: Infinity,
-                        delay: p.delay,
+                        // delay: p.delay,
                     }}
                     style={{
                         position: "absolute",
@@ -276,7 +276,7 @@ export default function About() {
                             }}
                         >
                             <motion.img
-                                src="/image.jpeg"
+                                src="/image2.webp"
                                 alt="profile"
                                 style={{
                                     width: "100%",

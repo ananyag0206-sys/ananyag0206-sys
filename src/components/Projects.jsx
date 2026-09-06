@@ -1,63 +1,28 @@
 "use client";
-import React, { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-// import GlassCard from "./GlassCard.jsx";
-// import CardFlip from "./CardFlip";
 import UniverseCard from "./UniverseCard";
-// import Background from "./Background.jsx";
 
-// import MouseDotsBG from "./MouseDotsBG";
 
 export default function Projects() {
     const projects = [
-        // {
-        //     id: 1,
-        //     title: "Personal Portfolio Website",
-        //     desc:
-        //         "A modern, fully responsive portfolio built with React.js and Framer Motion, featuring smooth animations, reusable components, a dynamic projects section, and an optimized UI/UX design.",
-        //     img: "/port.jpeg",
-        //     tags: [
-        //         "React.js",
-        //         "Framer Motion",
-        //         "Tailwind CSS",
-        //         "Responsive Design",
-        //         "Vite",
-        //         "JavaScript",
-        //     ],
-        // },
-        // {
-        //     id: 2,
-        //     title: "Universal Multi-Database Client (DEX Project)",
-        //     desc:
-        //         "Designed a multi-database client with real-time interaction, query execution, visual insights and a developer-first workflow.",
-        //     img: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb",
-        //     tags: [
-        //         "React.js",
-        //         "Node.js",
-        //         "PostgreSQL",
-        //         "MongoDB",
-        //         "MySQL",
-        //         "REST API",
-        //         "Cloud",
-        //     ],
-        // },
-   
-    {
-    id: 1,
-    title: "Portfolio Website",
-    img: "/port.jpeg",
-    // subtitle: "A modern, fully responsive portfolio built with React.js and Framer Motion",
-    desc:
-        "A modern, fully responsive portfolio built with React.js and Framer Motion, featuring smooth animations, reusable components, a dynamic projects section, and an optimized UI/UX design.",
-},
-{    id: 2,
-    title: "Multi-Database Client",
-    img: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb",
-    desc:
-        "Designed a multi-database client with real-time interaction, query execution, visual insights and a developer-first workflow.",
-    // subtitle: "Designed a multi-database client with real-time interaction, query execution, visual insights and a developer-first workflow.",
-}
-];
+        {
+            id: 1,
+            title: "Portfolio Website",
+            img: "/port.webp",
+            // subtitle: "A modern, fully responsive portfolio built with React.js and Framer Motion",
+            desc:
+                "A modern, fully responsive portfolio built with React.js and Framer Motion, featuring smooth animations, reusable components, a dynamic projects section, and an optimized UI/UX design.",
+        },
+        {
+            id: 2,
+            title: "Multi-Database Client",
+            img: "/dex-project-image.webp",
+            desc:
+                "Designed a multi-database client with real-time interaction, query execution, visual insights and a developer-first workflow.",
+            // subtitle: "Designed a multi-database client with real-time interaction, query execution, visual insights and a developer-first workflow.",
+        }
+    ];
 
     /* ---------------- Heading Animations ---------------- */
     const titleVariants = {
@@ -66,19 +31,19 @@ export default function Projects() {
             transition: { staggerChildren: 0.06 },
         },
     };
-const subtitle = "Hand-picked modern full-stack projects focused on animations, performance and clean UI.";
+    const subtitle = "Hand-picked modern full-stack projects focused on animations, performance and clean UI.";
 
-const letterVariants = {
-  hidden: { opacity: 0, y: 15 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.04,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
+    const letterVariants = {
+        hidden: { opacity: 0, y: 15 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.04,
+                ease: [0.22, 1, 0.36, 1],
+            },
+        },
+    };
 
     const letter = {
         hidden: { opacity: 0, y: 18, filter: "blur(4px)" },
@@ -128,8 +93,8 @@ const letterVariants = {
             id="projects"
             className="relative min-h-screen w-full bg-black text-white py-24 px-6 overflow-hidden"
         >
-               {/* Mouse Hover Dots Background */}
-    {/* <MouseDotsBG /> */}
+            {/* Mouse Hover Dots Background */}
+            {/* <MouseDotsBG /> */}
             {/* ⭐ Floating Particles Background */}
             {Array.from({ length: 25 }).map((_, i) => (
                 <motion.div
@@ -143,7 +108,7 @@ const letterVariants = {
                     transition={{
                         duration: 6 + Math.random() * 3,
                         repeat: Infinity,
-                        delay: Math.random() * 3,
+                        // delay: Math.random() * 3,
                     }}
                     className="absolute w-2 h-2 rounded-full bg-purple-500/60 blur-sm"
                     style={{
@@ -175,7 +140,7 @@ const letterVariants = {
                 variants={titleVariants}
                 initial="hidden"
                 whileInView="visible"
-                 
+
                 className="text-center text-5xl md:text-6xl font-extrabold flex justify-center gap-1 mb-6"
                 style={{
                     textShadow: "0 0 35px rgba(139,92,246,0.35)",
@@ -193,52 +158,52 @@ const letterVariants = {
             </motion.h2>
 
             {/* ⭐ Subtext */}
-              <motion.p
-      initial="hidden"
-      whileInView="visible"
-    //   viewport={{ once: false }}
-      transition={{ staggerChildren: 0.015 }}
-      className="text-gray-300 text-center max-w-3xl mx-auto text-lg leading-relaxed flex flex-wrap justify-center"
-    >
-      {subtitle.split("").map((char, i) => (
-        <motion.span key={i} variants={letterVariants}>
-          {char === " " ? "\u00A0" : char}
-        </motion.span>
-      ))}
-    </motion.p>
+            <motion.p
+                initial="hidden"
+                whileInView="visible"
+                //   viewport={{ once: false }}
+                transition={{ staggerChildren: 0.015 }}
+                className="text-gray-300 text-center max-w-3xl mx-auto text-lg leading-relaxed flex flex-wrap justify-center"
+            >
+                {subtitle.split("").map((char, i) => (
+                    <motion.span key={i} variants={letterVariants}>
+                        {char === " " ? "\u00A0" : char}
+                    </motion.span>
+                ))}
+            </motion.p>
 
 
             {/* ⭐ Cards Grid */}
             <motion.div
-    ref={ref}
-    variants={containerVariants}
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: false, amount: 0.15 }}
-    transition={{
-        staggerChildren: 0.18,        // ⭐ Delay between each card
-        delayChildren: 0.2,
-    }}
-    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto mt-14"
->
-    {projects.map((p) => (
+                ref={ref}
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.15 }}
+                transition={{
+                    staggerChildren: 0.18,        // ⭐ Delay between each card
+                    delayChildren: 0.2,
+                }}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto mt-14"
+            >
+                {projects.map((p) => (
 
-        <motion.div
-            key={p.id}
-            variants={{
-                hidden: { opacity: 0, scale: 0.85, y: 30 },
-                visible: {
-                    opacity: 1,
-                    scale: 1,
-                    y: 0,
-                    transition: {
-                        duration: 0.8,
-                        ease: [0.22, 1, 0.36, 1],
-                    },
-                },
-            }}
-        >
-            {/* 
+                    <motion.div
+                        key={p.id}
+                        variants={{
+                            hidden: { opacity: 0, scale: 0.85, y: 30 },
+                            visible: {
+                                opacity: 1,
+                                scale: 1,
+                                y: 0,
+                                transition: {
+                                    duration: 0.8,
+                                    ease: [0.22, 1, 0.36, 1],
+                                },
+                            },
+                        }}
+                    >
+                        {/* 
                 <CardFlip
                     key={p.id}
                     title={p.title}
@@ -266,22 +231,22 @@ const letterVariants = {
                 />  
             */}
 
-            <UniverseCard
-                title={p.title}
-                subtitle={p.subtitle}
-                desc={p.desc}
-                img={p.img}
-                action="View Project"
-                link={
-                    p.id === 1
-                        ? import.meta.env.VITE_PORTFOLIO_GITHUB_LINK
-                        : import.meta.env.VITE_DEX_GITHUB_LINK
-                }
-            />
-        </motion.div>
+                        <UniverseCard
+                            title={p.title}
+                            subtitle={p.subtitle}
+                            desc={p.desc}
+                            img={p.img}
+                            action="View Project"
+                            link={
+                                p.id === 1
+                                    ? import.meta.env.VITE_PORTFOLIO_GITHUB_LINK
+                                    : import.meta.env.VITE_DEX_GITHUB_LINK
+                            }
+                        />
+                    </motion.div>
 
-    ))}
-</motion.div>
+                ))}
+            </motion.div>
 
 
         </section>

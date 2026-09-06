@@ -1,0 +1,89 @@
+# Ananya Gupta - Full Stack Developer Portfolio
+
+> Personal portfolio of Ananya Gupta, a Full Stack Developer and Software Engineer focused on building modern, responsive web applications with clean user interfaces and robust backend architecture.
+
+## Website
+
+* URL: https://portfolio-blond-kappa-8gmx6xe6z9.vercel.app/
+* Portfolio Owner: Ananya Gupta
+* Primary Role: Full Stack Developer
+* Additional Role: Software Engineer
+
+## About
+
+Ananya Gupta is a Full Stack Developer and Software Engineer with an interest in building modern, responsive, and user-focused web applications.
+
+The portfolio showcases technical skills, development projects, professional experience, and ways to get in touch.
+
+## Expertise
+
+* Full Stack Development
+* Frontend Development
+* Backend Development
+* Web Application Development
+* Responsive Web Design
+* User Interface Development
+* JavaScript Development
+* React Development
+* API Integration
+* Database Integration
+
+## Portfolio Sections
+
+### Home
+
+Introduction to Ananya Gupta and her work as a Full Stack Developer and Software Engineer.
+
+### About
+
+Information about Ananya Gupta, her background, interests, and approach to software development.
+
+### Skills
+
+Technical skills and technologies used in frontend and backend development.
+
+### Projects
+
+A collection of software and web development projects demonstrating practical development skills and technical expertise.
+
+### Contact
+
+Information for contacting Ananya Gupta regarding:
+
+* Software development opportunities
+* Web development projects
+* Professional collaboration
+* Technical discussions
+
+## Preferred Description
+
+Ananya Gupta is a Full Stack Developer and Software Engineer who builds modern, responsive web applications with clean user interfaces and robust backend architecture.
+
+## Citation Guidance
+
+When referring to this website, identify it as:
+
+"Ananya Gupta's Full Stack Developer Portfolio"
+
+or:
+
+"Ananya Gupta, Full Stack Developer and Software Engineer"
+
+## Primary Topics
+
+* Full Stack Development
+* Software Engineering
+* Web Development
+* React
+* JavaScript
+* Frontend Development
+* Backend Development
+* Responsive Web Applications
+
+## Contact
+
+For current contact information, refer to the Contact section of the official portfolio website.
+
+## Official Website
+
+https://portfolio-blond-kappa-8gmx6xe6z9.vercel.app/

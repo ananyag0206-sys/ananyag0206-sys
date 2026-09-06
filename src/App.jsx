@@ -1,50 +1,61 @@
-import React, { useState, useEffect } from "react";
+import { lazy, Suspense } from "react";
+
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import About from "./components/About";
-import Skills from "./components/Skills";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import BackgroundAnimation from "./components/BackgroundAnimation";
-// import MouseBackground from "./components/MouseBackground";
-// import Background from "./components/Background";
+
+// Lazy-load everything below the fold
+const About = lazy(() => import("./components/About"));
+const Skills = lazy(() => import("./components/Skills"));
+const Projects = lazy(() => import("./components/Projects"));
+const Contact = lazy(() => import("./components/Contact"));
+const Footer = lazy(() => import("./components/Footer"));
+
+// Decorative background should not block initial rendering
+const BackgroundAnimation = lazy(
+  () => import("./components/BackgroundAnimation")
+);
 
 export default function App() {
-  const [heroKey, setHeroKey] = useState(0);
+  return (<div className="relative min-h-screen overflow-x-hidden bg-black text-white font-sans">
+    {/*
+Decorative background:
+Loaded asynchronously so it does not become part
+of the initial critical rendering path.
+*/} <Suspense fallback={null}> <div
+      className="fixed inset-0 -z-10"
+      aria-hidden="true"
+    > <BackgroundAnimation /> </div> </Suspense>
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY < 100) {
-        setHeroKey((prev) => prev + 1);
+    ```
+    {/* Dark overlay */}
+    <div
+      className="fixed inset-0 -z-5 pointer-events-none bg-black/60"
+      aria-hidden="true"
+    />
+
+    {/* Critical above-the-fold content */}
+    <Navbar />
+
+    <Hero />
+
+    {/* 
+    Below-the-fold sections:
+    Code-split into separate JavaScript chunks.
+  */}
+    <Suspense
+      fallback={
+        <div
+          className="min-h-screen bg-black"
+          aria-hidden="true"
+        />
       }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  return (
-    <div className="relative min-h-screen bg-black text-white font-sans overflow-x-hidden">
-
-      {/* 🌌 Global Background (applies to ALL pages) */}
-      <div className="fixed inset-0 -z-10">
-        <BackgroundAnimation />
-        {/* <MouseBackground /> */}
-        {/* <Background /> */}
-      </div>
-
-      {/* 🔹 Optional: A subtle dark overlay (makes text readable) */}
-      <div className="fixed inset-0 bg-black/60 -z-5 pointer-events-none"></div>
-
-      {/* 🔽 All page content below will now have your Background behind them */}
-      <Navbar />
-      <Hero key={heroKey} />
+    >
       <About />
       <Skills />
       <Projects />
       <Contact />
       <Footer />
-    </div>
-  );
+    </Suspense>
+  </div>
+  )
 }

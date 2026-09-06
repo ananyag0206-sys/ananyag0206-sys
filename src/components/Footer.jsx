@@ -118,7 +118,7 @@ export default function Footer() {
                 transition={{ duration: 1 }}
                 className="text-center text-gray-500 mt-10"
             >
-                © {new Date().getFullYear()} Ananya Gupta
+                © {new Date().getFullYear() + 5} Ananya Gupta
             </motion.div>
         </footer>
     );

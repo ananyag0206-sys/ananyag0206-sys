@@ -1,11 +1,9 @@
 "use client";
-import React from "react";
 import { motion } from "framer-motion";
 import {
     FaHtml5,
     FaJsSquare,
     FaReact,
-    FaCss3Alt,
     FaBootstrap,
     FaNodeJs,
     FaDatabase,

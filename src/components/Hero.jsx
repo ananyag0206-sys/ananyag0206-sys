@@ -61,8 +61,7 @@ export default function Hero() {
       {/* VIDEO BACKGROUND */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
-        src="/hero.mp4"
-        poster="/hero-poster.jpg"
+        src="/hero-compressed.mp4"
         autoPlay
         muted
         loop
@@ -136,7 +135,7 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1 }}
+          transition={{ duration: 1 }}
           viewport={{ once: false }}
           className="mt-6 text-gray-300 max-w-2xl mx-auto text-lg md:text-xl"
         >
@@ -186,10 +185,9 @@ export default function Hero() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             viewport={{ once: false }}
-            href="/CV_PORT.pdf"
+            href="/Ananya_Gupta_cv.pdf"
             download
-            className="px-6 py-3 rounded-full bg-black/50 border border-white/10 
-                       text-white font-medium hover:border-white/60 transition"
+            className="px-6 py-3 rounded-full bg-black/50 border border-white/10 text-white font-medium hover:border-white/60 transition"
           >
             Download CV
           </motion.a>
